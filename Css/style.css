@@ -1,0 +1,106 @@
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* propiedades del padre */
+.padre{
+    height: 800px;
+    display: grid;
+    /*propiedad para trabajar tamaño colummnas y filas*/
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 20% 80%;
+    /* ----------- */
+    /* si el tamaño es el mismo en column y row se puede usar solo gap y listo */
+    column-gap: 10px;
+    row-gap: 10px;
+    /* -------------- */
+}
+
+/* propiedades de los hijos */
+.hijoUno{
+    background-color: violet;
+}
+
+.hijoDos{
+    background-color: green;
+
+}
+.hijoTres{
+    background-color: blue;
+}
+
+.hijoCuatro{
+    background-color: yellow;
+}
+
+/* ejepmplo 2 */
+
+.ejemplo{
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: darksalmon;
+    justify-items: center;
+    align-items: center;
+}
+
+.imgUno{
+    /* permite trabajar el posicionamiento individual del hijo en la caja, no respeta al padre */
+    justify-self: right;
+}
+
+.imgDos{
+    justify-self: start;
+}
+
+
+/* ------------------- */
+
+/* ultimo ejemplo */
+
+/* propiedades padre */
+.contenedor{
+    /* VH es visual height se usa para visualizar toda la vista de los navegadores */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    /* sirve para trabajar las areas del HTML (HEADER MAIN SECTION FOOTER*/
+
+    grid-template-areas: 
+        "header header header"
+        "main main section"
+        "footer footer footer"
+    ;
+
+
+}
+
+header{
+    background-color: green;
+    grid-area: header;
+    display: flex;
+}
+
+main{
+    background-color: cyan;
+    grid-area: main;
+    text-align: center;
+}
+
+section{
+    background-color: red;
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    background-color: yellow;
+    grid-area: footer;
+}
